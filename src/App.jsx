@@ -3,7 +3,11 @@ import { Amplify } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
-import outputs from '../amplify_outputs.json'; // or use ./aws-exports if you're using that
+import awsExports from "./aws-exports";
+import { Amplify } from 'aws-amplify';
+
+Amplify.configure(awsExports);
+
 import Notes from './components/Notes';
 
 Amplify.configure(outputs);
