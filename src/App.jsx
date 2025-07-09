@@ -4,17 +4,13 @@ import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
 import awsExports from "./aws-exports";
-import { Amplify } from 'aws-amplify';
-
-Amplify.configure(awsExports);
-
 import Notes from './components/Notes';
 
-Amplify.configure(outputs);
+// ✅ Correctly configure Amplify
+Amplify.configure(awsExports);
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
-
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
